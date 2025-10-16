@@ -1,0 +1,21 @@
+# Core data science packages
+pandas
+numpy
+scikit-learn
+
+# Visualization
+matplotlib
+seaborn
+
+# Machine learning models
+xgboost
+
+# Notebooks
+jupyter
+
+# Model interpretability (optional, for later phases)
+# shap
+# lime
+
+# Imbalanced data handling
+# imbalanced-learn
