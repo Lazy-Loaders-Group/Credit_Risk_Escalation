@@ -25,3 +25,5 @@
    ```
 
 The setup scripts will create a virtual environment and install all required packages from `requirements.txt`.
+
+### Data set is in `data/raw` folder in .zip format. You can unzip it and use.nd use it.
