@@ -1,2 +1,29 @@
+# Large dataset files
 data/raw/LC_loans_granting_model_dataset.csv
-data/raw/LC_loans_granting_model_dataset.csv
+data/raw/*.csv
+
+# Virtual environment
+uom_venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+
+# Model files (optional - uncomment if models are too large)
+# results/models/*.pkl
+# results/models/*.h5
+
+# OS files
+.DS_Store
+Thumbs.db
