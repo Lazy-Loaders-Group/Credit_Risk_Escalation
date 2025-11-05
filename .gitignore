@@ -24,6 +24,12 @@ __pycache__/
 # results/models/*.pkl
 # results/models/*.h5
 
+# Large binary files
+*.dmg
+*.zip
+*.tar.gz
+*.iso
+
 # OS files
 .DS_Store
 Thumbs.db
