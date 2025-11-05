@@ -21,10 +21,11 @@ This project implements a production-ready credit risk escalation system that:
 
 ## 🚀 Quick Start (For New Users)
 
-### 📖 Choose Your Guide:
+### 📖 Documentation Guide:
 
-- **🌟 [START_HERE.md](START_HERE.md)** - **Absolute beginners** (4 simple steps, visual guide)
-- **📘 [QUICKSTART.md](QUICKSTART.md)** - **Detailed walkthrough** (complete explanations, troubleshooting)
+- **🌟 [SETUP.md](SETUP.md)** - **Start here!** Complete setup and installation guide
+- **📘 [PROGRESS.md](PROGRESS.md)** - See what's been done and recent changes
+- **📖 [PROJECT_GUIDE.md](PROJECT_GUIDE.md)** - Comprehensive project reference and methodology
 
 ### What's Included:
 - ✅ Step-by-step setup instructions (10 minutes)
@@ -32,6 +33,8 @@ This project implements a production-ready credit risk escalation system that:
 - ✅ Troubleshooting for common issues
 - ✅ How to verify your results
 - ✅ How to use the trained system on new data
+- ✅ Git repository optimization guide
+- ✅ Documentation reorganization notes
 
 ---
 
@@ -181,10 +184,17 @@ After completing all notebooks, you'll achieve:
 
 ## 📚 Documentation
 
-- **[QUICKSTART.md](QUICKSTART.md)** - Complete step-by-step execution guide (START HERE!)
-- **[PROGRESS.md](PROGRESS.md)** - Current status, metrics, and phase summaries
-- **[PROJECT_GUIDE.md](PROJECT_GUIDE.md)** - Original 6-phase project plan
-- **[results/reports/FINAL_PROJECT_REPORT.md](results/reports/FINAL_PROJECT_REPORT.md)** - Comprehensive technical report
+### Main Guides:
+- **[SETUP.md](SETUP.md)** - Complete setup and installation guide
+- **[PROGRESS.md](PROGRESS.md)** - Project progress and changes tracker
+- **[PROJECT_GUIDE.md](PROJECT_GUIDE.md)** - Comprehensive 6-phase project plan
+
+### Technical Reports:
+- **[results/reports/FINAL_PROJECT_REPORT.md](results/reports/FINAL_PROJECT_REPORT.md)** - Complete technical report
+- **[results/reports/phase1_data_quality_report.md](results/reports/phase1_data_quality_report.md)** - Data quality analysis
+
+### Archived Documentation:
+- **[archived_docs/](archived_docs/)** - Old documentation files (consolidated into main guides)
 
 ---
 
@@ -298,7 +308,7 @@ This project is for educational purposes. Please check the dataset license befor
 
 ## 🎉 Get Started Now!
 
-**👉 Ready to run the project?** Open [**QUICKSTART.md**](QUICKSTART.md) for the complete step-by-step guide!
+**👉 Ready to run the project?** Open [**SETUP.md**](SETUP.md) for the complete setup and installation guide!
 
 ```bash
 # Quick commands to get started:
