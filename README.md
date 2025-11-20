@@ -8,23 +8,25 @@
 
 This project implements a production-ready credit risk escalation system that:
 
-- ✅ **Automates loan decisions** using ensemble ML (78.3% automation rate)
-- ✅ **Quantifies uncertainty** with 30-model bootstrap ensemble
-- ✅ **Escalates intelligently** when predictions are uncertain (21.7% to humans)
-- ✅ **Achieves 88.76% accuracy** on automated decisions (vs 79% without escalation)
-- ✅ **Saves 20.9% in costs** while improving decision quality
-- ✅ **Provides full explainability** using SHAP analysis
+- 🎯 **Automates loan decisions** using ensemble ML (target: 78% automation rate)
+- 🎯 **Quantifies uncertainty** with 30-model bootstrap ensemble
+- 🎯 **Escalates intelligently** when predictions are uncertain (~22% to humans)
+- 🎯 **Target: 88%+ accuracy** on automated decisions
+- 🎯 **Target: 20% cost savings** while improving decision quality
+- 🎯 **Provides full explainability** using SHAP analysis
 
-**Business Value:** Save $678 per 210K applications while improving accuracy and focusing human experts on the most challenging cases.
+**Business Value:** Potential to save $678 per 210K applications while improving accuracy and focusing human experts on the most challenging cases.
+
+**📍 Current Status:** Phase 1 Complete (Data Exploration) - Ready to train models!
 
 ---
 
 ## 🚀 Quick Start (For New Users)
 
-### 📖 Documentation Guide:
+### 📖 **START HERE:**
 
-- **🌟 [SETUP.md](SETUP.md)** - **Start here!** Complete setup and installation guide
-- **📘 [PROGRESS.md](PROGRESS.md)** - See what's been done and recent changes
+- **⭐ [ACTION_PLAN.md](ACTION_PLAN.md)** - **YOUR STEP-BY-STEP GUIDE!** Clear action items to complete the project
+- **🔧 [SETUP.md](SETUP.md)** - Complete setup and installation guide (if you need to reinstall)
 - **📖 [PROJECT_GUIDE.md](PROJECT_GUIDE.md)** - Comprehensive project reference and methodology
 
 ### What's Included:
@@ -162,23 +164,25 @@ Credit_Risk_Escalation/
 
 ---
 
-## 📈 Key Results
+## 📈 Expected Results
 
-After completing all notebooks, you'll achieve:
+After completing all notebooks, you should achieve:
 
-| Metric | Target | Achieved | Status |
-|--------|--------|----------|--------|
-| **Baseline AUC-ROC** | >0.75 | 0.823 | ✅ |
-| **Automation Rate** | 70-85% | 78.3% | ✅ |
-| **Automated Accuracy** | >85% | 88.76% | ✅ |
-| **Cost Savings** | Positive | 20.9% | ✅ |
-| **Uncertainty Validation** | Strong | 0.324 corr | ✅ |
+| Metric | Target | Status |
+|--------|--------|--------|
+| **Baseline AUC-ROC** | >0.75 | 🎯 To achieve |
+| **Automation Rate** | 70-85% | 🎯 To achieve |
+| **Automated Accuracy** | >85% | 🎯 To achieve |
+| **Cost Savings** | Positive | 🎯 To achieve |
+| **Uncertainty Validation** | Strong | 🎯 To achieve |
 
-**Business Impact:**
-- 💰 $678 saved per 210K applications (20.9% reduction)
-- ⚡ 78.3% of decisions automated (only 21.7% need human review)
-- 🎯 88.76% accuracy on automated decisions (vs 79.3% baseline)
+**Potential Business Impact:**
+- 💰 ~$678 saved per 210K applications (~21% reduction)
+- ⚡ ~78% of decisions automated (only ~22% need human review)
+- 🎯 ~89% accuracy on automated decisions (vs ~79% baseline)
 - 📊 Full explainability with SHAP values
+
+**📍 Current Phase:** Data exploration complete - ready to train models!
 
 ---
 
