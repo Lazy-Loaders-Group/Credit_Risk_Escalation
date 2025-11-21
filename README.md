@@ -8,26 +8,29 @@
 
 This project implements a production-ready credit risk escalation system that:
 
-- ✅ **Automates loan decisions** using ensemble ML (78.3% automation rate)
-- ✅ **Quantifies uncertainty** with 30-model bootstrap ensemble
-- ✅ **Escalates intelligently** when predictions are uncertain (21.7% to humans)
-- ✅ **Achieves 88.76% accuracy** on automated decisions (vs 79% without escalation)
-- ✅ **Saves 20.9% in costs** while improving decision quality
-- ✅ **Provides full explainability** using SHAP analysis
+- 🎯 **Automates loan decisions** using ensemble ML (target: 78% automation rate)
+- 🎯 **Quantifies uncertainty** with 30-model bootstrap ensemble
+- 🎯 **Escalates intelligently** when predictions are uncertain (~22% to humans)
+- 🎯 **Target: 88%+ accuracy** on automated decisions
+- 🎯 **Target: 20% cost savings** while improving decision quality
+- 🎯 **Provides full explainability** using SHAP analysis
 
-**Business Value:** Save $678 per 210K applications while improving accuracy and focusing human experts on the most challenging cases.
+**Business Value:** Potential to save $678 per 210K applications while improving accuracy and focusing human experts on the most challenging cases.
+
+**📍 Current Status:** Phase 1 Complete (Data Exploration) - Ready to train models!
 
 ---
 
 ## 🚀 Quick Start (For New Users)
 
-### 📖 Documentation Guide:
+### 📖 **START HERE:**
 
-- **🌟 [SETUP.md](SETUP.md)** - **Start here!** Complete setup and installation guide
-- **📘 [PROGRESS.md](PROGRESS.md)** - See what's been done and recent changes
+- **⭐ [ACTION_PLAN.md](ACTION_PLAN.md)** - **YOUR STEP-BY-STEP GUIDE!** Clear action items to complete the project
+- **🔧 [SETUP.md](SETUP.md)** - Complete setup and installation guide (if you need to reinstall)
 - **📖 [PROJECT_GUIDE.md](PROJECT_GUIDE.md)** - Comprehensive project reference and methodology
 
 ### What's Included:
+
 - ✅ Step-by-step setup instructions (10 minutes)
 - ✅ Complete execution workflow (2-3 hours)
 - ✅ Troubleshooting for common issues
@@ -41,11 +44,13 @@ This project implements a production-ready credit risk escalation system that:
 ## 📋 Initial Setup
 
 ### Prerequisites
+
 - Python 3.8 or higher
 - At least 4GB RAM
 - At least 2GB free disk space
 
 ### macOS/Linux
+
 ```bash
 # 1. Clone repository (if not already done)
 git clone https://github.com/Lazy-Loaders-Group/Credit_Risk_Escalation.git
@@ -62,6 +67,7 @@ python -c "import pandas, sklearn, xgboost, shap; print('✅ Setup complete!')"
 ```
 
 ### Windows
+
 ```cmd
 REM 1. Clone repository (if not already done)
 git clone https://github.com/Lazy-Loaders-Group/Credit_Risk_Escalation.git
@@ -162,38 +168,44 @@ Credit_Risk_Escalation/
 
 ---
 
-## 📈 Key Results
+## 📈 Expected Results
 
-After completing all notebooks, you'll achieve:
+After completing all notebooks, you should achieve:
 
-| Metric | Target | Achieved | Status |
-|--------|--------|----------|--------|
-| **Baseline AUC-ROC** | >0.75 | 0.823 | ✅ |
-| **Automation Rate** | 70-85% | 78.3% | ✅ |
-| **Automated Accuracy** | >85% | 88.76% | ✅ |
-| **Cost Savings** | Positive | 20.9% | ✅ |
-| **Uncertainty Validation** | Strong | 0.324 corr | ✅ |
+| Metric                     | Target   | Status        |
+| -------------------------- | -------- | ------------- |
+| **Baseline AUC-ROC**       | >0.75    | 🎯 To achieve |
+| **Automation Rate**        | 70-85%   | 🎯 To achieve |
+| **Automated Accuracy**     | >85%     | 🎯 To achieve |
+| **Cost Savings**           | Positive | 🎯 To achieve |
+| **Uncertainty Validation** | Strong   | 🎯 To achieve |
 
-**Business Impact:**
-- 💰 $678 saved per 210K applications (20.9% reduction)
-- ⚡ 78.3% of decisions automated (only 21.7% need human review)
-- 🎯 88.76% accuracy on automated decisions (vs 79.3% baseline)
+**Potential Business Impact:**
+
+- 💰 ~$678 saved per 210K applications (~21% reduction)
+- ⚡ ~78% of decisions automated (only ~22% need human review)
+- 🎯 ~89% accuracy on automated decisions (vs ~79% baseline)
 - 📊 Full explainability with SHAP values
+
+**📍 Current Phase:** Data exploration complete - ready to train models!
 
 ---
 
 ## 📚 Documentation
 
 ### Main Guides:
+
 - **[SETUP.md](SETUP.md)** - Complete setup and installation guide
 - **[PROGRESS.md](PROGRESS.md)** - Project progress and changes tracker
 - **[PROJECT_GUIDE.md](PROJECT_GUIDE.md)** - Comprehensive 6-phase project plan
 
 ### Technical Reports:
+
 - **[results/reports/FINAL_PROJECT_REPORT.md](results/reports/FINAL_PROJECT_REPORT.md)** - Complete technical report
 - **[results/reports/phase1_data_quality_report.md](results/reports/phase1_data_quality_report.md)** - Data quality analysis
 
 ### Archived Documentation:
+
 - **[archived_docs/](archived_docs/)** - Old documentation files (consolidated into main guides)
 
 ---
@@ -203,6 +215,7 @@ After completing all notebooks, you'll achieve:
 ### Common Issues:
 
 **"ModuleNotFoundError"**
+
 ```bash
 # Make sure virtual environment is activated
 source uom_venv/bin/activate  # macOS/Linux
@@ -210,12 +223,14 @@ pip install -r requirements.txt
 ```
 
 **"Kernel died" in Jupyter**
+
 ```bash
 # Reduce ensemble size in notebook 3:
 n_models = 10  # Instead of 30
 ```
 
 **"Dataset not found"**
+
 ```bash
 # Extract the ZIP file in data/raw/
 cd data/raw
@@ -229,6 +244,7 @@ unzip LC_loans_granting_model_dataset.csv.zip
 ## 🎓 Learning Resources
 
 ### What You'll Learn:
+
 - ✅ Building production ML pipelines
 - ✅ Uncertainty quantification with bootstrap ensembles
 - ✅ Cost-benefit optimization for business decisions
@@ -238,6 +254,7 @@ unzip LC_loans_granting_model_dataset.csv.zip
 - ✅ Model calibration (Platt scaling)
 
 ### Technologies Used:
+
 - **Python 3.12** - Core programming language
 - **pandas & numpy** - Data manipulation
 - **scikit-learn** - ML algorithms and preprocessing
@@ -253,6 +270,7 @@ unzip LC_loans_granting_model_dataset.csv.zip
 This project was developed by the **Lazy Loaders Team** as part of a credit risk assessment system.
 
 For questions or contributions, please:
+
 1. Review the [QUICKSTART.md](QUICKSTART.md) guide
 2. Check [PROGRESS.md](PROGRESS.md) for current status
 3. Open an issue on GitHub
