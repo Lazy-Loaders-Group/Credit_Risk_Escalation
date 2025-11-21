@@ -32,4 +32,4 @@ __pycache__/
 
 # OS files
 .DS_Store
-Thumbs.db
+Thumbs.dbdata/splits/X_train.csv
