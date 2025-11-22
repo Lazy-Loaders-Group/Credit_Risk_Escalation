@@ -189,12 +189,27 @@ st.markdown("""
     }
     
     /* Sidebar Styling */
-    .css-1d391kg, [data-testid="stSidebar"] {
+    [data-testid="stSidebar"] {
         background-color: #2c3e50;
     }
-    
-    .css-1d391kg .sidebar-content, [data-testid="stSidebar"] .sidebar-content {
-        color: white;
+
+    [data-testid="stSidebar"] * {
+        color: white !important;
+    }
+
+    [data-testid="stSidebar"] .stMarkdown,
+    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] .stRadio label,
+    [data-testid="stSidebar"] [data-testid="stMetricValue"],
+    [data-testid="stSidebar"] [data-testid="stMetricLabel"],
+    [data-testid="stSidebar"] p,
+    [data-testid="stSidebar"] span,
+    [data-testid="stSidebar"] div {
+        color: white !important;
+    }
+
+    [data-testid="stSidebar"] .stAlert {
+        background-color: rgba(255, 255, 255, 0.1);
     }
     
     /* Info Boxes */
@@ -638,7 +653,7 @@ def render_manual_entry_form(preprocessor, ensemble, escalation_system):
         if st.button("🔍 Submit Application for Risk Assessment", type="primary", use_container_width=True):
             with st.spinner("⚙️ Analyzing application..."):
                 result = predict_loan(loan_data, preprocessor, ensemble, escalation_system)
-            display_results(result)
+            display_results(result, escalation_system)
 
 
 def render_sample_data_form(preprocessor, ensemble, escalation_system):
@@ -685,7 +700,7 @@ def render_sample_data_form(preprocessor, ensemble, escalation_system):
         if st.button("🔍 Analyze Sample Application", type="primary", use_container_width=True):
             with st.spinner("⚙️ Analyzing application..."):
                 result = predict_loan(sample_data, preprocessor, ensemble, escalation_system)
-            display_results(result)
+            display_results(result, escalation_system)
 
 
 def render_csv_upload_form(preprocessor, ensemble, escalation_system):
@@ -735,7 +750,7 @@ def render_csv_upload_form(preprocessor, ensemble, escalation_system):
         st.markdown('</div>', unsafe_allow_html=True)
 
 
-def display_results(result):
+def display_results(result, escalation_system):
     """Display prediction results"""
     
     if 'error' in result:
