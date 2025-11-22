@@ -43,8 +43,8 @@ class EscalationSystem:
     
     def __init__(
         self,
-        uncertainty_threshold: float = 0.1,
-        confidence_threshold: float = 0.7,
+        uncertainty_threshold: float = 0.25,
+        confidence_threshold: float = 0.55,
         cost_false_positive: float = 1.0,
         cost_false_negative: float = 5.0,
         cost_human_review: float = 0.5
