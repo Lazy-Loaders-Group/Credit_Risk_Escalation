@@ -486,10 +486,10 @@ def main():
     )
     
     # Show system info
-    st.sidebar.markdown("---")
-    st.sidebar.markdown("### 📊 Escalation Parameters")
-    st.sidebar.metric("Uncertainty Threshold", f"{escalation_system.uncertainty_threshold:.3f}")
-    st.sidebar.metric("Confidence Threshold", f"{escalation_system.confidence_threshold:.2%}")
+    # st.sidebar.markdown("---")
+    # st.sidebar.markdown("### 📊 Escalation Parameters")
+    # st.sidebar.metric("Uncertainty Threshold", f"{escalation_system.uncertainty_threshold:.3f}")
+    # st.sidebar.metric("Confidence Threshold", f"{escalation_system.confidence_threshold:.2%}")
     
     st.sidebar.markdown("---")
     st.sidebar.markdown("### ℹ️ About")
@@ -758,7 +758,7 @@ def display_results(result, escalation_system):
         return
     
     st.markdown("---")
-    st.markdown("## 📊 Risk Assessment Results")
+    st.markdown("## Risk Assessment Results")
     
     # Decision box with professional styling
     if result['should_escalate']:
