@@ -24,6 +24,32 @@ Unlike traditional ML systems that force predictions on all cases, this system *
 
 ### For First-Time Setup:
 
+- **⭐ [ACTION_PLAN.md](ACTION_PLAN.md)** - **YOUR STEP-BY-STEP GUIDE!** Clear action items to complete the project
+- **🔧 [SETUP.md](SETUP.md)** - Complete setup and installation guide (if you need to reinstall)
+- **📖 [PROJECT_GUIDE.md](PROJECT_GUIDE.md)** - Comprehensive project reference and methodology
+
+### What's Included:
+
+- ✅ Step-by-step setup instructions (10 minutes)
+- ✅ Complete execution workflow (2-3 hours)
+- ✅ Troubleshooting for common issues
+- ✅ How to verify your results
+- ✅ How to use the trained system on new data
+- ✅ Git repository optimization guide
+- ✅ Documentation reorganization notes
+
+---
+
+## 📋 Initial Setup
+
+### Prerequisites
+
+- Python 3.8 or higher
+- At least 4GB RAM
+- At least 2GB free disk space
+
+### macOS/Linux
+
 ```bash
 # 1. Clone repository
 git clone https://github.com/Lazy-Loaders-Group/Credit_Risk_Escalation.git
@@ -50,6 +76,25 @@ source uom_venv/bin/activate
 # Run evaluation notebook
 jupyter notebook notebooks/05_comprehensive_evaluation.ipynb
 ```
+
+### Windows
+
+```cmd
+REM 1. Clone repository (if not already done)
+git clone https://github.com/Lazy-Loaders-Group/Credit_Risk_Escalation.git
+cd Credit_Risk_Escalation
+
+REM 2. Run setup script
+setup.bat
+
+REM 3. Activate virtual environment
+uom_venv\Scripts\activate
+
+REM 4. Verify installation
+python -c "import pandas, sklearn, xgboost, shap; print('✅ Setup complete!')"
+```
+
+**⚠️ Important:** The dataset is in `data/raw` folder in .zip format. Extract it before running the notebooks.
 
 ---
 
@@ -136,6 +181,21 @@ Credit_Risk_Escalation/
 | **Cost Savings** | ~20% | Reduction in manual review costs |
 | **Models** | 30 | Bootstrap ensemble size |
 
+| Metric                     | Target   | Status        |
+| -------------------------- | -------- | ------------- |
+| **Baseline AUC-ROC**       | >0.75    | 🎯 To achieve |
+| **Automation Rate**        | 70-85%   | 🎯 To achieve |
+| **Automated Accuracy**     | >85%     | 🎯 To achieve |
+| **Cost Savings**           | Positive | 🎯 To achieve |
+| **Uncertainty Validation** | Strong   | 🎯 To achieve |
+
+**Potential Business Impact:**
+
+- 💰 ~$678 saved per 210K applications (~21% reduction)
+- ⚡ ~78% of decisions automated (only ~22% need human review)
+- 🎯 ~89% accuracy on automated decisions (vs ~79% baseline)
+- 📊 Full explainability with SHAP values
+
 ---
 
 ## 🎓 How It Works
@@ -177,12 +237,25 @@ Uncertainty: 0.15
 
 ## 📚 Documentation
 
+### Main Guides:
+
 - **[CURRENT_STATUS.md](CURRENT_STATUS.md)** - What's working now ⭐ START HERE
 - **[SETUP_README.md](SETUP_README.md)** - Complete setup instructions
 - **[HOW_TO_USE.md](HOW_TO_USE.md)** - Usage guide
 - **[PREDICTION_GUIDE.md](PREDICTION_GUIDE.md)** - Detailed prediction documentation
-- **[PROJECT_GUIDE.md](PROJECT_GUIDE.md)** - Full project plan
+- **[SETUP.md](SETUP.md)** - Complete setup and installation guide
+- **[PROGRESS.md](PROGRESS.md)** - Project progress and changes tracker
+- **[PROJECT_GUIDE.md](PROJECT_GUIDE.md)** - Comprehensive 6-phase project plan
 - **[FINAL_SUMMARY.md](FINAL_SUMMARY.md)** - Implementation summary
+
+### Technical Reports:
+
+- **[results/reports/FINAL_PROJECT_REPORT.md](results/reports/FINAL_PROJECT_REPORT.md)** - Complete technical report
+- **[results/reports/phase1_data_quality_report.md](results/reports/phase1_data_quality_report.md)** - Data quality analysis
+
+### Archived Documentation:
+
+- **[archived_docs/](archived_docs/)** - Old documentation files (consolidated into main guides)
 
 ---
 
@@ -192,6 +265,33 @@ Uncertainty: 0.15
 - **Git** ([Download](https://git-scm.com/downloads/))
 - **4GB RAM** (minimum)
 - **2GB free disk space**
+
+### Common Issues:
+
+**"ModuleNotFoundError"**
+
+```bash
+# Make sure virtual environment is activated
+source uom_venv/bin/activate  # macOS/Linux
+pip install -r requirements.txt
+```
+
+**"Kernel died" in Jupyter**
+
+```bash
+# Reduce ensemble size in notebook 3:
+n_models = 10  # Instead of 30
+```
+
+**"Dataset not found"**
+
+```bash
+# Extract the ZIP file in data/raw/
+cd data/raw
+unzip LC_loans_granting_model_dataset.csv.zip
+```
+
+**More help:** See the Troubleshooting section in [QUICKSTART.md](QUICKSTART.md)
 
 ---
 
@@ -226,6 +326,26 @@ This notebook provides:
 python simple_predict.py --input data/splits/X_test.csv --output predictions.csv --limit 1000
 ```
 
+### What You'll Learn:
+
+- ✅ Building production ML pipelines
+- ✅ Uncertainty quantification with bootstrap ensembles
+- ✅ Cost-benefit optimization for business decisions
+- ✅ Model interpretability with SHAP
+- ✅ Handling class imbalance (SMOTE)
+- ✅ Hyperparameter tuning (GridSearchCV)
+- ✅ Model calibration (Platt scaling)
+
+### Technologies Used:
+
+- **Python 3.12** - Core programming language
+- **pandas & numpy** - Data manipulation
+- **scikit-learn** - ML algorithms and preprocessing
+- **XGBoost** - Gradient boosting models
+- **SHAP** - Model explainability
+- **matplotlib & seaborn** - Visualizations
+- **Jupyter** - Interactive development
+
 ---
 
 ## 🛠️ Development Status
@@ -257,6 +377,12 @@ To contribute:
 1. Fork the repository
 2. Create a feature branch
 3. Submit a pull request
+
+For questions or contributions, please:
+
+1. Review the [QUICKSTART.md](QUICKSTART.md) guide
+2. Check [PROGRESS.md](PROGRESS.md) for current status
+3. Open an issue on GitHub
 
 ---
 
@@ -338,6 +464,10 @@ Then open: `notebooks/05_comprehensive_evaluation.ipynb`
 **Last Updated**: November 22, 2024  
 **Version**: 1.0.0  
 **Status**: ✅ Production Ready (via Jupyter notebooks)
+
+**Developed by:** Lazy Loaders Team  
+**Last Updated:** November 5, 2025  
+**Status:** ✅ All 6 phases complete - Production ready!
 
 ---
 
