@@ -1,6 +1,7 @@
 # Large dataset files
 data/raw/LC_loans_granting_model_dataset.csv
 data/raw/*.csv
+data/splits/*.csv
 
 # Virtual environment
 uom_venv/
@@ -32,4 +33,4 @@ __pycache__/
 
 # OS files
 .DS_Store
-Thumbs.dbdata/splits/X_train.csv
+Thumbs.db
