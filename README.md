@@ -96,6 +96,17 @@ python -c "import pandas, sklearn, xgboost, shap; print('✅ Setup complete!')"
 
 **⚠️ Important:** The dataset is in `data/raw` folder in .zip format. Extract it before running the notebooks.
 
+If you don't have the dataset locally, download it from the Google Drive folder below and place the extracted files into the `data/raw/` directory:
+
+- Download link: [Google Drive - Dataset](https://drive.google.com/drive/folders/1hAWSmFFxp2n_5ET2MR2HfL5O41otZ47Y?usp=sharing)
+
+Example:
+
+```bash
+# after downloading and extracting, ensure the CSV(s) live in data/raw/
+ls data/raw
+```
+
 ---
 
 ## 📊 System Architecture
