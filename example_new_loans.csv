@@ -1,0 +1,6 @@
+revenue,dti_n,loan_amnt,fico_n,experience_c,emp_length,purpose,home_ownership_n,addr_state,zip_code
+50000,15.5,10000,680,5,5 years,debt_consolidation,MORTGAGE,CA,940xx
+35000,28.3,15000,620,2,2 years,credit_card,RENT,NY,100xx
+80000,8.2,5000,750,10,10+ years,home_improvement,OWN,TX,750xx
+28000,35.8,20000,590,0,< 1 year,other,RENT,FL,330xx
+60000,18.5,12000,700,3,3 years,car,MORTGAGE,IL,600xx

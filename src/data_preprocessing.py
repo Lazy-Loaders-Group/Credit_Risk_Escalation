@@ -212,6 +212,13 @@ class CreditDataPreprocessor:
             dti_norm = 1 - (df_processed['dti_n'] / 100)  # Invert so higher is better
             df_processed['credit_quality_score'] = (fico_norm + dti_norm) / 2
         
+        # Don't add title and desc columns during transform - they should only be in training data
+        # Remove them if they were added
+        if 'title' in df_processed.columns and 'title' not in df.columns:
+            df_processed = df_processed.drop(columns=['title'])
+        if 'desc' in df_processed.columns and 'desc' not in df.columns:
+            df_processed = df_processed.drop(columns=['desc'])
+        
         print(f"Created interaction features. New shape: {df_processed.shape}")
         return df_processed
     
@@ -313,24 +320,58 @@ class CreditDataPreprocessor:
         """
         df_processed = df.copy()
         
-        # Apply same transformations
+        # Add missing columns with default values if they don't exist
+        if 'id' not in df_processed.columns:
+            df_processed['id'] = 0
+        if 'issue_d' not in df_processed.columns:
+            df_processed['issue_d'] = 'Unknown'
+        
+        # Add title and desc as they're expected by the model during training, but we'll remove them later
+        if 'title' not in df_processed.columns:
+            df_processed['title'] = 'Unknown'
+        if 'desc' not in df_processed.columns:
+            df_processed['desc'] = 'Unknown'
+        
+        # Create engineered features (same as in fit_transform)
+        df_processed = self.create_interaction_features(df_processed)
+        
+        # Apply imputation
         if self.numerical_cols:
-            df_processed[self.numerical_cols] = self.numerical_imputer.transform(
-                df_processed[self.numerical_cols]
-            )
+            # Only transform columns that exist
+            existing_num_cols = [col for col in self.numerical_cols if col in df_processed.columns]
+            if existing_num_cols:
+                df_processed[existing_num_cols] = self.numerical_imputer.transform(
+                    df_processed[existing_num_cols]
+                )
         
         if self.categorical_cols:
+            # Apply label encoding
             for col in self.categorical_cols:
                 if col in df_processed.columns and col in self.label_encoders:
                     le = self.label_encoders[col]
-                    df_processed[col] = le.transform(df_processed[col].astype(str))
+                    # Handle unknown categories
+                    df_processed[col] = df_processed[col].astype(str).apply(
+                        lambda x: le.transform([x])[0] if x in le.classes_ else -1
+                    )
         
+        # Apply scaling
         if self.numerical_cols:
-            df_processed[self.numerical_cols] = self.scaler.transform(
-                df_processed[self.numerical_cols]
-            )
+            existing_num_cols = [col for col in self.numerical_cols if col in df_processed.columns]
+            if existing_num_cols:
+                df_processed[existing_num_cols] = self.scaler.transform(
+                    df_processed[existing_num_cols]
+                )
         
-        return df_processed
+        # Ensure all expected features are present in the correct order
+        # But exclude 'title' and 'desc' as they're not used by the model
+        features_to_use = [f for f in self.feature_names if f not in ['title', 'desc']]
+        
+        for feature in features_to_use:
+            if feature not in df_processed.columns:
+                df_processed[feature] = 0  # Add missing features with default value
+        
+        # Return only the features in the correct order (excluding title and desc)
+        return df_processed[features_to_use]
 
 
 def save_splits(X_train, X_val, X_test, y_train, y_val, y_test, output_dir='../data/splits'):
